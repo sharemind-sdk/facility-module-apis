@@ -30,6 +30,7 @@ SharemindSetProjectVersion()
 
 FIND_PACKAGE(SharemindCHeaders REQUIRED)
 FIND_PACKAGE(SharemindModuleApis REQUIRED)
+FIND_PACKAGE(SharemindLibProcessFacility REQUIRED)
 
 
 # API headers:
@@ -59,6 +60,7 @@ SharemindAddComponentPackage("dev"
     DEB_SECTION "libdevel"
     DEB_DEPENDS
         "libsharemind-cheaders-dev (>= 0.1.0)"
+        "libsharemind-processfacility-api-dev (>= 0.1.0)"
         "sharemind-module-apis-dev (>= 1.0.0)"
         "libc6-dev (>= 2.19)"
         "libgcc-4.8-dev"
