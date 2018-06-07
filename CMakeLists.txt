@@ -18,7 +18,7 @@
 #
 
 CMAKE_MINIMUM_REQUIRED(VERSION "3.0")
-PROJECT(SharemindFacilityModuleApis VERSION "1.0.0" LANGUAGES NONE)
+PROJECT(SharemindFacilityModuleApis VERSION "2.0.0" LANGUAGES NONE)
 
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/config.local" OPTIONAL)
 INCLUDE("${CMAKE_CURRENT_BINARY_DIR}/config.local" OPTIONAL)
@@ -34,9 +34,8 @@ FIND_PACKAGE(SharemindLibProcessFacility REQUIRED)
 
 
 # API headers:
-SET(SharemindFacilityModuleApis_HEADERS
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/api.h"
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/api_0x1.h"
+FILE(GLOB SharemindFacilityModuleApis_HEADERS
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
 )
 INSTALL(FILES ${SharemindFacilityModuleApis_HEADERS}
         DESTINATION "include/sharemind/facility-module-apis"
