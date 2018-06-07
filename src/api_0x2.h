@@ -137,8 +137,7 @@ struct ModuleInitContext {
 
 struct FacilityModuleInfo {
 
-    std::shared_ptr<void> (* const initializeModule)(
-            ModuleInitContext & context);
+    void (* const initializeModule)(ModuleInitContext & context);
 
 }; /* struct ModuleInfo { */
 
