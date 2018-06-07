@@ -67,5 +67,6 @@ SharemindAddComponentPackage("dev"
         "| libgcc-5-dev"
         "| libgcc-6-dev"
         "| libgcc-7-dev"
+        "libstdc++-dev"
 )
 SharemindPackagingFinalize()
