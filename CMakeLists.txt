@@ -29,8 +29,6 @@ SharemindSetProjectVersion()
 
 
 FIND_PACKAGE(SharemindCHeaders REQUIRED)
-FIND_PACKAGE(SharemindModuleApis REQUIRED)
-FIND_PACKAGE(SharemindLibProcessFacility REQUIRED)
 
 
 # API headers:
@@ -47,7 +45,6 @@ SharemindCreateCMakeFindFiles(
     INCLUDE_DIRS
         "${CMAKE_INSTALL_PREFIX}/include"
         ${SharemindCHeaders_INCLUDE_DIRS}
-        ${SharemindModuleApis_INCLUDE_DIRS}
 )
 
 
@@ -59,14 +56,7 @@ SharemindAddComponentPackage("dev"
     DEB_SECTION "libdevel"
     DEB_DEPENDS
         "libsharemind-cheaders-dev (>= 0.1.0)"
-        "libsharemind-processfacility-api-dev (>= 0.1.0)"
-        "sharemind-module-apis-dev (>= 1.0.0)"
         "libc6-dev (>= 2.19)"
-        "libgcc-4.8-dev"
-        "| libgcc-4.9-dev"
-        "| libgcc-5-dev"
-        "| libgcc-6-dev"
-        "| libgcc-7-dev"
         "libstdc++-dev"
 )
 SharemindPackagingFinalize()
