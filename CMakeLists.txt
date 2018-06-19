@@ -28,9 +28,6 @@ FIND_PACKAGE(SharemindCMakeHelpers 1.2 REQUIRED)
 SharemindSetProjectVersion()
 
 
-FIND_PACKAGE(SharemindCHeaders REQUIRED)
-
-
 # API headers:
 FILE(GLOB SharemindFacilityModuleApis_HEADERS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
@@ -44,7 +41,6 @@ INSTALL(FILES ${SharemindFacilityModuleApis_HEADERS}
 SharemindCreateCMakeFindFiles(
     INCLUDE_DIRS
         "${CMAKE_INSTALL_PREFIX}/include"
-        ${SharemindCHeaders_INCLUDE_DIRS}
 )
 
 
@@ -55,7 +51,6 @@ SharemindAddComponentPackage("dev"
     DESCRIPTION "Sharemind Facility Module API development headers"
     DEB_SECTION "libdevel"
     DEB_DEPENDS
-        "libsharemind-cheaders-dev (>= 0.1.0)"
         "libc6-dev (>= 2.19)"
         "libstdc++-dev"
 )

@@ -20,11 +20,12 @@
 #ifndef SHAREMIND_FACILITY_MODULE_APIS_API_H
 #define SHAREMIND_FACILITY_MODULE_APIS_API_H
 
-#include <sharemind/extern_c.h>
 #include <stdint.h>
 
 
-SHAREMIND_EXTERN_C_BEGIN
+#ifdef __cplusplus
+extern "C" {
+#endif
 
 /**
   \note This struct needs a name, because otherwise we might get this warning
@@ -51,6 +52,8 @@ typedef struct SharemindFacilityModuleInfo_ {
         (name), (version), { __VA_ARGS__, 0x0 } \
     }
 
-SHAREMIND_EXTERN_C_END
+#ifdef __cplusplus
+} /* extern "C" { */
+#endif
 
 #endif /* SHAREMIND_FACILITY_MODULE_APIS_API_H */
