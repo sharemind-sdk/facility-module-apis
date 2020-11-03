@@ -23,23 +23,22 @@ PROJECT(SharemindFacilityModuleApis VERSION "2.0.1" LANGUAGES NONE)
 INCLUDE("${CMAKE_CURRENT_SOURCE_DIR}/config.local" OPTIONAL)
 INCLUDE("${CMAKE_CURRENT_BINARY_DIR}/config.local" OPTIONAL)
 
-FIND_PACKAGE(SharemindCMakeHelpers 1.3 REQUIRED)
+FIND_PACKAGE(SharemindCMakeHelpers 1.6 REQUIRED)
 
 
-# API headers:
+# FacilityModuleApis:
 FILE(GLOB SharemindFacilityModuleApis_HEADERS
-    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h"
-)
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h")
+SharemindAddInterfaceLibrary(FacilityModuleApis)
+TARGET_INCLUDE_DIRECTORIES(FacilityModuleApis
+    INTERFACE
+        # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src> # TODO
+        $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>
+    )
 INSTALL(FILES ${SharemindFacilityModuleApis_HEADERS}
         DESTINATION "include/sharemind/facility-module-apis"
         COMPONENT "dev")
-
-
-# Install cmake files:
-SharemindCreateCMakeFindFiles(
-    INCLUDE_DIRS
-        "${CMAKE_INSTALL_PREFIX}/include"
-)
+SharemindCreateCMakeFindFilesForTarget(FacilityModuleApis)
 
 
 # Packaging:
