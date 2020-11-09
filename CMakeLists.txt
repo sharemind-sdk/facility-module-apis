@@ -29,7 +29,8 @@ FIND_PACKAGE(SharemindCMakeHelpers 1.6 REQUIRED)
 # FacilityModuleApis:
 FILE(GLOB SharemindFacilityModuleApis_HEADERS
     "${CMAKE_CURRENT_SOURCE_DIR}/src/*.h")
-SharemindAddInterfaceLibrary(FacilityModuleApis)
+SharemindAddInterfaceLibrary(FacilityModuleApis
+    EXPOSE_FILES ${SharemindFacilityModuleApis_HEADERS})
 TARGET_INCLUDE_DIRECTORIES(FacilityModuleApis
     INTERFACE
         # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src> # TODO
