@@ -34,7 +34,7 @@ SharemindAddInterfaceLibrary(FacilityModuleApis
 TARGET_INCLUDE_DIRECTORIES(FacilityModuleApis
     INTERFACE
         # $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src> # TODO
-        $<INSTALL_INTERFACE:${CMAKE_INSTALL_PREFIX}/include>
+        $<INSTALL_INTERFACE:include>
     )
 INSTALL(FILES ${SharemindFacilityModuleApis_HEADERS}
         DESTINATION "include/sharemind/facility-module-apis"
